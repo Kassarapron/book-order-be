@@ -1,7 +1,7 @@
 package controller
 
 import (
-        "github.com/Kassarapron/newproject/entity"
+        "backend/entity"
         "github.com/gin-gonic/gin"
         "net/http"
 )

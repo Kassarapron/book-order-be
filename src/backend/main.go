@@ -1,22 +1,12 @@
 package main
 
-
 import (
-
-  "github.com/kassarapron/newproject/controller"
-
-  "github.com/kassarapron/newproject/entity"
-
+  "backend/controller"
+  "backend/entity"
   "github.com/gin-gonic/gin"
-
 )
-
-
 func main() {
-
   entity.SetupDatabase()
-
-  
   r := gin.Default()
   r.Use(CORSMiddleware())
 
@@ -44,6 +34,12 @@ func main() {
  r.POST("/Company"       , controller.CreateCompany)
  r.PATCH("/Company"      , controller.UpdateCompany)
  r.DELETE("/Company/:id" , controller.DeleteCompany)
+  // BookOrder Routes
+  r.GET("/BookOrder"        , controller.ListBookOrder)
+  r.GET("/BookOrder/:id"    , controller.GetBookOrder)
+  r.POST("/BookOrder"       , controller.CreateBookOrder)
+  r.PATCH("/BookOrder"      , controller.UpdateBookOrder)
+  r.DELETE("/BookOrder/:id" , controller.DeleteBookOrder)
 
 // Run the server
   r.Run()

@@ -30,7 +30,7 @@ type Book struct {
 type BookOrder struct {
   gorm.Model
   Quantity     uint
-  DateTime     time.Time
+  Date         time.Time
   //AdminID ทำหน้าที่เป็น FK
   AdminID      *uint
   Admin        Admin `gorm:references:id`
